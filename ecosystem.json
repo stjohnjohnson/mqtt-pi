@@ -1,0 +1,44 @@
+{
+    "apps": [
+        {
+            "name": "MQTT",
+            "script": "./node_modules/.bin/mosca",
+            "env": {
+                "COMMON_VARIABLE": "true"
+            },
+            "env_production": {
+                "NODE_ENV": "production"
+            }
+        },
+        {
+            "name": "Camera",
+            "script": "./node_modules/.bin/mqtt-camera-ftpd",
+            "env": {
+                "CONFIG_DIR": "./camera"
+            },
+            "env_production": {
+                "NODE_ENV": "production"
+            }
+        },
+        {
+            "name": "Bridge",
+            "script": "./node_modules/.bin/smartthings-mqtt-bridge",
+            "env": {
+                "CONFIG_DIR": "./bridge"
+            },
+            "env_production": {
+                "NODE_ENV": "production"
+            }
+        }
+    ],
+    "deploy": {
+        "prod": {
+            "user": "pi",
+            "host": "pi",
+            "ref": "origin/master",
+            "repo": "git@github.com:stjohnjohnson/mqtt-pi.git",
+            "path": "/srv/",
+            "post-deploy": "npm install ; pm2 startOrRestart ecosystem.json --env production"
+        }
+    }
+}

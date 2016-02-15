@@ -1,0 +1,25 @@
+{
+  "name": "mqtt-pi",
+  "version": "1.0.0",
+  "description": "PM2 configuration to get MQTT deployed with SmartThings bridge and Camera module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stjohnjohnson/mqtt-pi.git"
+  },
+  "author": "St. John Johnson <st.john.johnson@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stjohnjohnson/mqtt-pi/issues"
+  },
+  "homepage": "https://github.com/stjohnjohnson/mqtt-pi",
+  "dependencies": {
+    "mosca": "^1.0.2",
+    "mqtt-camera-ftpd": "0.0.2",
+    "smartthings-mqtt-bridge": "^1.1.2"
+  }
+}
