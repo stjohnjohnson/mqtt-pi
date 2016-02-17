@@ -19,7 +19,7 @@
   "homepage": "https://github.com/stjohnjohnson/mqtt-pi",
   "dependencies": {
     "mosca": "^1.0.2",
-    "mqtt-camera-ftpd": "0.0.3",
+    "mqtt-camera-ftpd": "^1.0.0",
     "smartthings-mqtt-bridge": "^1.1.2"
   }
 }
